@@ -1,0 +1,145 @@
+*{
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+body{
+    background-color: #FFFFF1;
+    background-image: linear-gradient(to bottom, #CBDCEB, #FFFFF1);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container-fluid{
+    padding: 0;
+    min-height: 100%;
+    flex-direction: column;
+}
+
+/* navbar */
+.header{
+    background-color: #608BC1;
+    width: auto;
+    padding: 10px 20px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+}
+
+.header img{
+    width: 30px;
+    height: 30px;
+}
+
+.header img:hover{
+    background-color: #CBDCEB;
+    border-radius: 50%;
+}
+
+.header h1{
+    color: #FFFFF1;
+    margin: auto;
+}
+
+/* review */
+.review-container{
+    background-color: #FFFFF1;
+    margin-top: 170px;
+    width: 70%;
+    border-radius: 15px;
+    padding: 0 40px;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.review-container h1{
+    color: #133E87;
+    font-size: 32px;
+    text-align: center;
+    margin: 30px auto 0 auto;
+}
+
+.review-container p{
+    font-size: 14px;
+    text-align: center;
+    color: #608BC1;
+    margin: 15px auto 30px auto;
+}
+
+/* .review-container .rating, */
+.review-container .comment{
+    color: #133E87;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+/* .review-container .rating{
+    margin-top: 30px;
+}
+
+.review-container .rating .rate-star{
+    margin-right: 10px;
+}
+
+.review-container .star{
+    cursor: pointer;
+    font-size: 24px;
+    color: #133E87;
+}
+
+.star.one, 
+.star.two, 
+.star.three, 
+.star.four, 
+.star.five {
+    color: #FFB200;
+} */
+
+.review-container #review-comment{
+    background-color: #FFFFF1;
+    border: 2px solid #133E87;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    color: #133E87;
+}
+
+.review-container .btn{
+    background-image: linear-gradient(#608BC1, #133E87);
+    border-image: linear-gradient(#608BC1, #133E87);
+    color: #FFFFF1;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    margin: 30px auto 40px auto;
+    font-size: 16px;
+}
+
+.review-container .btn:hover{
+    background-image: linear-gradient(#133E87, #133E87);
+    border-image: linear-gradient(#133E87, #133E87);
+}
+
+/* footer */
+.footer{
+    margin-top: 61px;
+}
+
+.footer h3{
+    color: #133E87;
+    font-size: 20px;
+    margin-left: 60px;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+.footer .social-media{
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+.footer .fa{
+    font-size: 20px;
+    margin-top: 80px;
+    color: #133E87;
+}
+
+.footer .github{
+    margin-right: 50px;
+}

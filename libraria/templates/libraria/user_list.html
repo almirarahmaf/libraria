@@ -1,0 +1,64 @@
+{% extends "libraria/base.html" %}
+{% load static %}
+
+{% block title %}
+User List - Libraria
+{% endblock %}
+
+{% block content %}
+<link href="{% static 'libraria/css/style_list.css' %}" rel="stylesheet">
+{% if messages %}
+    <div class="alert alert-info" id="info">
+        {% for message in messages %}
+            {{ message}}
+        {% endfor %}
+    </div>
+{% endif %}
+<div class="container d-flex justify-content-between align-items-center" id="listinfo">
+    <h2 class="mb-4 fixed">User List</h2>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <img src="{% static 'libraria/asset/Search.png' %}" class="img-fluid" alt="Search_icon" id="search_icon">
+        </div>
+        <input class="p-1 form-control" id="search" placeholder="Search User" type="text">
+    </div>
+</div>
+<div class="table-container">
+    <form id="delete-form" method="POST" action="{% url 'delete_selected_users' %}">
+        {% csrf_token %}
+        <table class="table table-striped">
+            <thead class="judul">
+                <tr>
+                    <th><input type="checkbox" id="select-all"></th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Join Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+                {% for user in users %}
+                <tr>
+                    <td><input type="checkbox" name="selected_users" value="{{ user.username }}" class="data-checkbox"></td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ join_date|date:"Y/m/d" }}</td> 
+                    <td>
+                        <form action="{% url 'delete_user' user.username %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="border-0 p-1 bg-transparent" onclick="return confirm('Apakah Anda yakin ingin menghapus {{ user.name }}?')">
+                                <img src="{% static 'libraria/asset/delete.png' %}" alt="Delete">
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-danger mt-3" id="delete-selected" onclick="return confirm('Apakah Anda yakin ingin menghapus {{ user.name }}?')" disabled>Delete Selected</button>
+    </form>
+</div>
+
+<script src="{% static 'libraria/js/search.js' %}" defer></script>
+<script src="{% static 'libraria/js/delete_selected.js' %}" defer></script>
+{% endblock %}

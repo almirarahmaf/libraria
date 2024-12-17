@@ -1,0 +1,64 @@
+{% extends "libraria/base.html" %}
+{% load static %}
+
+{% block title %}
+Book List - Libraria
+{% endblock %}
+
+{% block content %}
+<link href="{% static 'libraria/css/style_list.css' %}" rel="stylesheet">
+{% if messages %}
+    <div class="alert alert-info" id="info">
+        {% for message in messages %}
+            {{ message}}
+        {% endfor %}
+    </div>
+{% endif %}
+<div class="container d-flex justify-content-between align-items-center" id="listinfo">
+    <h2 class="mb-4 fixed">Book List</h2>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <img src="{% static 'libraria/asset/Search.png' %}" class="img-fluid" alt="Search_icon" id="search_icon">
+        </div>
+        <input class="p-1 form-control" id="search" placeholder="Search book" type="text">
+    </div>
+</div>
+<div class="table-container">
+    <form id="delete-form" method="POST" action="{% url 'delete_selected_book' %}">
+        {% csrf_token %}
+        <table class="table table-striped">
+            <thead class="judul">
+                <tr>
+                    <th><input type="checkbox" id="select-all"></th>
+                    <th>Book Title</th>
+                    <th>Book Count</th>
+                    <th>Book Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+                {% for book in books %}
+                <tr>
+                    <td><input type="checkbox" name="selected_book" value="{{ book.title }}" class="data-checkbox"></td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.stok }}</td>
+                    <td>{{ book.category.category_name }}</td>
+                    <td>
+                        <form action="{% url 'delete_book' book.title %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="border-0 p-1 bg-transparent" onclick="return confirm('Apakah Anda yakin ingin menghapus {{ book.title }}?')">
+                                <img src="{% static 'libraria/asset/delete.png' %}" alt="Delete">
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-danger mt-3" id="delete-selected" onclick="return confirm('Apakah Anda yakin ingin menghapus {{ book.title }}?')" disabled>Delete Selected</button>
+    </form>
+</div>
+
+<script src="{% static 'libraria/js/search.js' %}" defer></script>
+<script src="{% static 'libraria/js/delete_selected.js' %}" defer></script>
+{% endblock %}

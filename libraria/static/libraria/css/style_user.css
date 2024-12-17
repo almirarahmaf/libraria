@@ -1,0 +1,167 @@
+body{
+    background-color: #FFFFF1;
+}
+
+#top{
+    background-color: #FFFFF1;
+    z-index: 2;
+}
+
+#side{
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    height: 100%;
+    width: auto;
+    background-color: #CBDCEB;
+    padding-top: 10px !important;
+    margin: 0; 
+    z-index: 3;
+}
+
+#logo {
+    max-height: 40px; 
+    width: auto; 
+}
+
+#item {
+    max-height: 33px; 
+    width: auto; 
+}
+
+
+#user{
+    height: 45px !important; 
+    border-radius: 50%;
+    width: 45px;
+}
+
+#search_icon{
+    height: 20px;
+    width: 18px;
+    border-radius: 6px;
+    margin-top: 3px;
+}
+
+#search{
+    border: none;
+    border-radius: 6px;
+    margin-left: 3px;
+    background-color: #CBDCEB;
+}
+
+.input-group{
+    background-color: #CBDCEB;
+    border-radius: 6px;
+    margin-left: 100px;
+    padding: 5px 5px 5px 8px;
+    width: 250px;
+}
+
+input[type=text]:focus{
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown-menu {
+    width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #608BC1; 
+    box-shadow: 0px 0px 8px #133E87;
+}
+
+.dropdown-grid {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.dropdown-column {
+    flex: 1;
+}
+
+.dropdown-item {
+    font-size: 13px;
+    padding: 5px 0; 
+    text-decoration: none; 
+    color: #FFFFF1;
+}
+
+.category:hover{
+    background-color:  #608BC1 !important; 
+    color: #133E87;
+}
+
+@media (max-width: 768px) {
+    .dropdown-menu {
+        width: 500px; 
+    }
+    .dropdown-column {
+        flex: 1 1 calc(33.33% - 20px); 
+    }
+
+    #t-atas {
+        font-size: 16px;
+    }
+
+    .navbar {
+        flex-wrap: wrap; 
+        justify-content: space-between;
+    }
+
+    #isi {
+        margin-top: 11% !important;
+        margin-left: 90px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown-menu {
+        width: 200px; 
+        margin-right: 10px;
+        position: absolute !important;
+    }
+    .dropdown-column {
+        flex: 1 1 100%; 
+    }
+
+    .navbar {
+        position: relative !important;
+    }
+
+    .navbar img, #t-atas {
+        margin-bottom: 10px; 
+    }
+
+    #user{
+        margin-top: 13px !important;
+        height: 30px !important;
+    }
+
+    #search_icon{
+        margin-top: 10px;
+    }
+
+    .input-group{
+        padding: 0px 0px 0px 8px;
+    }
+
+    #isi {
+        margin-top: 2% !important;
+        margin-left: 90px !important;
+    }
+}
+
+#isi {
+    margin-left: 90px;
+    padding: 10px;
+    color: #133E87 !important;
+    margin-top: 5%;
+}
+
+#footer{
+    margin-top: 60vh !important;
+    margin-left: 1px !important;
+    color: #133E87 !important;
+}

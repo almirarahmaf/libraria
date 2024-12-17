@@ -1,0 +1,148 @@
+body{
+    background-color: #CBDCEB;
+}
+
+.row{
+    height: 100vh;
+}
+
+/* left column */
+#left-column h1{
+    color: #133E87;
+    font-size: 65px;
+    text-align: center;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+#left-column p{
+    color: #133E87;
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+#left-column img{
+    margin-top: 100px;
+    width: 500px;
+    height: auto;
+}
+
+/* right column */
+#right-column #signup-form{
+    background-color: #F3F3E0;
+    width: 70%;
+    height: fit-content;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+#signup-form h1{
+    color: #133E87;
+    margin-top: 30px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+#signup-form p, 
+#signup-form a{
+    text-align: center;
+    color: #133E87;
+    text-decoration: none;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+#signup-form .form-username{
+    margin: 30px 40px 0 40px;
+}
+
+#signup-form .form-email{
+    margin: 30px 40px 0 40px;
+}
+
+#signup-form .form-password{
+    margin: 30px 40px 0 40px;
+    position: relative;
+}
+
+#signup-form label{
+    color: #133E87;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+#signup-form .userpass input{
+    border: 2px solid #133E87;
+    background-color: #F3F3E0;
+    color: #133E87;
+}
+
+#password-field{
+    border: 2px solid #133E87;
+    background-color: #F3F3E0;
+    color: #133E87;
+    padding-right: 40px;
+}
+
+.toggle-password{
+    top: 50%;
+    right: 15px;
+    cursor: pointer;
+    color: #133E87;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#signup-form .form-check{
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+#signup-form .forgot-password{
+    margin-top: 10px;
+    margin-right: 40px;
+}
+
+#signup-form .form-check-input{
+    border: 2px solid #133E87;
+    background-color: #F3F3E0;
+}
+
+#signup-form .form-check-input:checked{
+    background-color: #133E87;
+}
+
+#signup-form .btn{
+    margin: 60px 40px 40px 40px;
+    background-image: linear-gradient(#608BC1, #133E87);
+    border-image: linear-gradient(#608BC1, #133E87);
+    color: #F3F3E0;
+    width: 100%;
+}
+
+#signup-form .btn:hover{
+    background-image: linear-gradient(#133E87, #133E87);
+    border-image: linear-gradient(#133E87, #133E87);
+}
+
+@media (max-width: 768px){
+    #left-column h1{
+        font-size: 40px;
+    }
+
+    #left-column p{
+        font-size: 20px;
+    }
+
+    #left-column img{
+        width: 300px;
+    }
+
+    #signup-form p{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #right-column #signup-form{
+        width: 90%;
+    }
+}

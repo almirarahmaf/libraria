@@ -1,0 +1,28 @@
+{% extends "libraria/base.html" %}
+{% load static %}
+
+{% block title %}
+Admin - Libraria
+{% endblock %}
+
+{% block content %}
+<link href="{% static 'libraria/css/style_hadmin.css' %}" rel="stylesheet">
+<div class="container p-0 ">
+    <h1>Welcome Admin!</h1><br>
+    <p>Manage your website here</p>
+</div>
+<div class="row gap-3 ms-1">
+    <div class="col-md-3 rounded border-0 text-center" id="column">
+        <p class="count pt-4">{{ user_count }}</p><br>
+        <h3>Users</h3>
+    </div>
+    <div class="col-md-3 rounded border-0 p-2 text-center" id="column">
+        <p class="count pt-4">{{ book_count }}</p><br>
+        <h3>Books</h3>
+    </div>
+    <div class="col-md-3 rounded border-0 p-2 text-center" id="column">
+        <p class="count pt-4">{{ category_count }}</p><br>
+        <h3>Categories</h3>
+    </div>
+</div>
+{% endblock %}

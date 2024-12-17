@@ -1,0 +1,137 @@
+body{
+    background: linear-gradient(to bottom, #CBDCEB 50%, #FFFFF1);
+    font-family: 'Jeju Gothic', sans-serif;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header{
+    background-color: #608BC1;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.d-flex{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.back-icon{
+    margin-right: auto;
+    margin-left: 10px;
+    height: auto;
+}
+
+.tittle{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFF1;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.book-info {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.book-cover {
+    max-width: 120px; 
+    border-radius: 3px;
+    flex-shrink: 0; 
+}
+
+.book {
+    font-size: 18px;
+    color: #133E87;
+    margin: 0 0 10px 0;
+}
+
+.info {
+    color: #608BC1;
+    font-size: 14px;
+    margin: 0;
+}
+
+hr{
+    background-color: #133E87;
+    height: 2px;
+    border: none;
+}
+
+.review-section {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.review-label {
+    color: #133E87;
+    margin-bottom: 10px;
+}
+
+.rating-text{
+    color: #133E87;
+    margin-bottom: 0px;
+}
+
+.rating {
+    color: #D4AF37;
+    margin-bottom: 10px;
+}
+
+.review-box {
+    width: 100%; 
+    max-width: 600px; 
+    height: 100px; 
+    padding: 10px;
+    background-color: #CBDCEB;
+    border: none;
+    border-radius: 5px;
+    resize: vertical;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.review-box::placeholder {
+    color: #608BC1;
+}
+
+.review-box:focus {
+    color: #133E87;
+    border-color: transparent;
+    outline: none;
+}
+
+.custom-btn {
+    background: linear-gradient(to bottom, #608BC1, #133E87);
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    margin-left: auto;
+    width: 100px;
+}
+
+.book-title{
+    color: #133E87;
+}

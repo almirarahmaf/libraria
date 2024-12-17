@@ -1,0 +1,82 @@
+{% extends 'libraria/base_user.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="{% static 'libraria/css/style_dashboard.css' %}" rel="stylesheet">
+<div class="container mt-1">
+    <!-- Welcome Section -->
+    <h1>Welcome Back, {{ request.user.username }}!</h1>
+    <p>Your reading adventure starts here</p>
+
+    <!-- Book of the Month -->
+    <section class="mt-4">
+        <h3>Book of the Month</h3>
+        <div class="row d-flex gap-5">
+            {% for listbook in book_of_the_month %}
+            <div class="col-md-3 border-0 p-3 d-flex flex-row align-items-start text-center" id="sec1">
+                <a href="{% url 'halamanpinjam' listbook.book_id %}"><img src="{{ listbook.cover_image.url }}" alt="{{ listbook.title }}" style="width: 100px; height: 150px;"></a>
+                <div class="d-flex flex-column justify-content-start" id="detail">
+                    <a href="{% url 'halamanpinjam' listbook.book_id %}" style="text-decoration: none;"><p class="book-title">{{ listbook.title }}</p></a>
+                    <p class="writer">{{ listbook.author }}</p>
+                    <div class="stars">
+                        {% for i in listbook.full_stars %}
+                            <i class="fa fa-star"></i> 
+                        {% endfor %}
+                        {% for i in listbook.empty_stars %}
+                            <i class="fa fa-star-o"></i> 
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <h3>Recommendation</h3>
+            <div class="row d-flex gap-5 p-3 rounded" id="recommen">
+                {% for listbook in recommendation %}
+                    <div class="col-md-2 border-0 flex-row align-items-start text-center rounded" id="sec2">
+                        <a href="{% url 'halamanpinjam' listbook.book_id %}"><img src="{{ listbook.cover_image.url }}" alt="{{ listbook.title }}" style="width: 100px; height: 150px;" class="pt-3"></a>
+                        <div class="justify-content-start mt-2" id="detail">
+                            <a href="{% url 'halamanpinjam' listbook.book_id %}" style="text-decoration: none; color: #133E87; text-align: left;" class="align-items-start"><p class="recom">{{ listbook.title }}</p></a>
+                            <p class="det">{{ listbook.author }}</p>
+                            <div class="stars">
+                                {% for i in listbook.full_stars %}
+                                    <i class="fa fa-star"></i> 
+                                {% endfor %}
+                                {% for i in listbook.empty_stars %}
+                                    <i class="fa fa-star-o"></i> 
+                                {% endfor %}
+                            </div>
+                            <p class="recom">Rp {{ listbook.price }}</p> <!-- nanti ini diubah -->
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+    </section>
+
+    <section class="mt-5">
+        <h3>Library Star</h3>
+        <div class="row d-flex gap-5">
+            {% for Profile in library_stars %}
+            <div class="col-md-2 flex-row align-items-start text-center rounded py-4 ms-3 border" id="librender">
+                <img src="{{ Profile.file.url }}" alt="{{ Profile.name }}" style="width: 80px; height: 80px; border-radius: 50%;" class="border">
+                <h5 class="pt-4">{{ Profile.name }}</h5>
+                <div class="stars pt-2">
+                    {% for i in Profile.full_stars %}
+                        <i class="fa fa-star"></i>
+                    {% endfor %}
+                    {% for i in Profile.empty_stars %}
+                        <i class="fa fa-star-o"></i> 
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

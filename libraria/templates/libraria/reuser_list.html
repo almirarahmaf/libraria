@@ -1,0 +1,77 @@
+{% extends "libraria/base_review.html" %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}
+Review List - Libraria
+{% endblock %}
+
+{% block list %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="{% static 'libraria/css/style_list.css' %}" rel="stylesheet">
+{% if messages %}
+    <div class="alert alert-info" id="info">
+        {% for message in messages %}
+            {{ message}}
+        {% endfor %}
+    </div>
+{% endif %}
+<div class="container d-flex justify-content-between align-items-center" id="listinfo">
+    <h2 class="mb-4 fixed">User's Review</h2>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <img src="{% static 'libraria/asset/Search.png' %}" class="img-fluid" alt="Search_icon" id="search_icon">
+        </div>
+        <input class="p-1 form-control" id="search" placeholder="Search review" type="text">
+    </div>
+</div>
+<div class="table-container">
+    <form id="delete-form" method="POST" action="{% url 'delete_selected_reuser' %}">
+        {% csrf_token %}
+        <table class="table table-striped">
+            <thead class="judul">
+                <tr>
+                    <th><input type="checkbox" id="select-all"></th>
+                    <th>Reviewer</th>
+                    <th>Reviewee</th>
+                    <th>Comment</th>
+                    <th>Rating</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+                {% for review_user in reuser %}
+                <tr>
+                    <td><input type="checkbox" name="selected_reuser" value="{{ review_user.comment }}" class="data-checkbox"></td>
+                    <td>{{ review_user.reviewer.username }}</td>
+                    <td>{{ review_user.reviewee.username }}</td>
+                    <td>{{ review_user.comment }}</td>
+                    <td>
+                        <div class="stars">
+                            {% for i in review_user.full_stars %}
+                                <i class="fa fa-star"></i>
+                            {% endfor %}
+                            {% for i in review_user.empty_stars %}
+                                <i class="fa fa-star-o"></i>
+                            {% endfor %}
+                        </div>
+                    </td>
+                    <td>
+                        <form action="{% url 'delete_reuser' review_user.comment %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="border-0 p-1 bg-transparent" onclick="return confirm('Do you want to delete the review?')">
+                                <img src="{% static 'libraria/asset/delete.png' %}" alt="Delete">
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-danger mt-3" id="delete-selected" onclick="return confirm('Do you want to delete the review?')" disabled>Delete Selected</button>
+    </form>
+</div>
+
+<script src="{% static 'libraria/js/search.js' %}" defer></script>
+<script src="{% static 'libraria/js/delete_selected.js' %}" defer></script>
+{% endblock %}

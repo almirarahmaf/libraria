@@ -1,0 +1,29 @@
+h1{
+    margin-bottom: 0px;
+}
+
+h3{
+    margin-top: -35px;
+}
+
+p{
+    margin-top: -15px;
+}
+
+#column{
+    background-color: #CBDCEB;
+    box-shadow: 2px 2px 5px black;
+}
+
+.count{
+    font-size: 50px;
+    padding: 4px;
+}
+
+.row{
+    margin-right: 0px;
+}
+
+.home{
+    margin-left: 10px !important;
+}

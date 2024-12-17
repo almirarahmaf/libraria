@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/earlyaccess/jejugothic.css' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static 'libraria/css/style-editProfile.css' %}">
+    <title>Libraria: Limitless Book Borrowing</title>
+</head>
+<body>
+    <div class="container-fluid">
+        {% include "libraria/nav-sidebarEditProfile.html" %}
+
+        <!-- main content -->
+        <div class="main">
+            <h3>Edit Profile</h3>
+            <form action="{% url 'editProfile' %}" method="POST" enctype="multipart/form-data" class="editForm d-flex flex-column justify-content-center align-items-center">
+                {% csrf_token %}
+                
+                {% if user_profile.file %}
+                    <img src="{{ user_profile.file.url }}" alt="myProfile" class="myProfile">
+                {% else %}
+                    <img src="" alt="myProfile" class="myProfile">
+                {% endif %}
+
+                <!-- profile -->
+                <div class="form-file">
+                    <label for="file-field" class="form-label file-label"></label>
+                    <input class="form-control" type="file" id="file-field" name="file" accept="image/*">
+                </div>
+
+                <!-- name -->
+                <div class="form-name">
+                    <label for="name-field">Name</label>
+                    <input type="text" class="form-control" id="name-field" name="name" value="{{ user_profile.name }}" placeholder="Enter name" required>
+                </div>
+
+                <!-- bio -->
+                <div class="form-bio">
+                    <label for="bio-field">Bio</label>
+                    <input type="text" class="form-control" id="bio-field" name="bio" value="{{ user_profile.bio }}">
+                </div>
+
+                 <!-- address -->
+                 <div class="form-address">
+                    <label for="address-field">Address</label>
+                    <textarea class="form-control" id="address-field" rows="3" name="address" required>{{ user_profile.address }}</textarea>
+                </div>
+
+                <!-- phone number -->
+                <div class="form-phone">
+                    <label for="phone-field">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone-field" value="{{ user_profile.phone }}" name="phone" pattern="[0-9]{12}" maxlength="12"  required>
+                    <span class="validity"></span>
+                </div>
+
+                <!-- account number -->
+                <div class="form-account">
+                    <label for="account-field">Account Number</label>
+                    <input type="text" class="form-control" id="account-field" value="{{ user_profile.account }}" name="account" maxlength="17" inputmode="numeric" pattern="\d+" required>
+                    <span class="validity"></span>
+                </div>
+
+                <!-- save -->
+                <div class="d-flex justify-content-end">
+                    <button class="btn" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

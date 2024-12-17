@@ -1,0 +1,217 @@
+.active-link{
+    color: #608BC1;
+}
+
+body{
+    font-family: 'Jeju Gothic', sans-serif;
+    background-color: #FFFFF1;
+    margin: 0;
+}
+
+.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar */
+.navbar{
+    background-color: #CBDCEB;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    height: 60px;
+}
+
+.navbar .navbar-brand img{
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.navbar .navbar-brand img:hover{
+    background-color: #FFFFF1;
+    border-radius: 50%;
+}
+
+.navbar h1{
+    font-size: 20px;
+    color: #133E87;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.navbar .profilePhoto img{
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+    border: 2px solid #133E87;
+    border-radius: 50%;
+}
+
+/* sidenav */
+.sidenav{
+    position: fixed;
+    width: 200px;
+    height: 88%;
+    border-top: 3px solid #CBDCEB;
+    border-right: 3px solid #CBDCEB;
+    border-bottom: 3px solid #CBDCEB;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    margin-left: -20px;
+    z-index: 1;
+    overflow-x: hidden;
+    top: 10%;
+}
+
+.sidenav .side-item{
+    margin-top: 20px;
+}
+
+.sidenav img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+.sidenav a{
+    margin-left: 40px;
+    text-decoration: none;
+    display: block;
+    color: #133E87;
+    font-size: 15px;
+}
+
+.sidenav a:hover{
+    color: #608BC1;
+}
+
+.sidenav .item-password{
+    margin-top: 20px;
+}
+
+/* main */
+.main{
+    margin-top: 75px;
+    margin-left: 230px;
+}
+
+.main h3{
+    margin-top: 100px;
+    color: #133E87;
+    font-size: 30px;
+}
+
+.main img{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    border: 3px solid #133E87;
+    border-radius: 50%;
+}
+
+
+/* form */
+.editForm{
+    padding-left: 20px;
+    padding-right: 60px;
+    color: #133E87;
+}
+
+.editForm label{
+    margin-top: 20px;
+}
+
+.editForm input,
+.editForm textarea,
+.editForm select{
+    border: 2px solid #133E87;
+    background-color: #FFFFF1;
+    color: #133E87;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.editForm input[type="file"]{
+    width: auto;
+    border: 2px solid #133E87;
+    background-color: #FFFFF1;
+    color: #133E87;
+}
+
+.editForm input[type="file"]::file-selector-button{
+    background-color: #FFFFF1;
+    color: #133E87;
+}
+
+.editForm .form-name{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.editForm .form-name,
+.editForm .form-bio,
+.editForm .form-address,
+.editForm .form-phone,
+.editForm .form-account{
+    width: 98%;
+}
+
+/* button */
+.editForm button{
+    margin-top: 50px;
+    margin-right: 10px;
+    width: 10%;
+    color: #F3F3E0;
+    background-image: linear-gradient(#133E87, #608BC1);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border: none;
+    font-family: 'Jeju Gothic', sans-serif;
+    margin-bottom: 30px;
+}
+
+.editForm .d-flex {
+    display: flex;  
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.editForm button:hover{
+    background-image: linear-gradient(#133E87, #133E87);
+    color: #F3F3E0
+}
+
+
+@media (max-width: 768px){
+    .editForm button{
+        width: 25%;
+    }
+}
+
+@media (max-width: 576px){
+    .sidenav{
+        width: 100px;
+    }
+
+    .sidenav a{
+        font-size: 0;
+    }
+
+    .main{
+        margin-left: 120px;
+    }
+
+    .editForm .form-name,
+    .editForm .form-bio,
+    .editForm .form-address,
+    .editForm .form-phone,
+    .editForm .form-account{
+        width: 100%;
+    }
+
+    .editForm input[type="file"]{
+        width: 100%;
+    }
+}

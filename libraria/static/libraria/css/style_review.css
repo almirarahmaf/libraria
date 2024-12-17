@@ -1,0 +1,21 @@
+#list {
+    border: 2px solid #133E87 !important; 
+    background-color: transparent !important; 
+    color: #133E87;
+    text-align: center;
+    padding: 5px 8px 5px 8px !important;
+    border-radius: 5px; 
+    text-decoration: none;
+    box-shadow: 0px 2px 5px #133E87;
+}
+
+#list.active {
+    background-color: #608BC1 !important; 
+    color: #FFFFF1 !important; 
+    border-color: #608BC1 !important; 
+}
+
+#list:hover {
+    background-color:  #608BC1 !important; 
+    color: #FFFFF1;
+}

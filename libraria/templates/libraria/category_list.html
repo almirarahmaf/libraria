@@ -1,0 +1,72 @@
+{% extends "libraria/base.html" %}
+{% load static %}
+
+{% block title %}
+Category List - Libraria
+{% endblock %}
+
+{% block content %}
+<link href="{% static 'libraria/css/style_list.css' %}" rel="stylesheet">
+{% if messages %}
+    <div class="alert alert-info" id="info">
+        {% for message in messages %}
+            {{ message}}
+        {% endfor %}
+    </div>
+{% endif %}
+<div class="container d-flex justify-content-between align-items-center" id="listinfo">
+    <h2 class="mb-4 fixed">Category List</h2>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <img src="{% static 'libraria/asset/Search.png' %}" class="img-fluid" alt="Search_icon" id="search_icon">
+        </div>
+        <input class="p-1 form-control" id="search" placeholder="Search category" type="text">
+    </div>
+</div>
+<div class="container text-end my-3" id="add">
+    <a href="{% url 'category_add' %}" class="btn py-1 px-2" id="add-book-btn">
+        + Add
+    </a>
+</div>
+<div class="table-container">
+    <form id="delete-form" method="POST" action="{% url 'delete_selected_category' %}">
+        {% csrf_token %}
+        <table class="table table-striped">
+            <thead class="judul">
+                <tr>
+                    <th><input type="checkbox" id="select-all"></th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+                {% for category in categories %}
+                <tr>
+                    <td><input type="checkbox" name="selected_category" value="{{ category.category_name }}" class="data-checkbox"></td>
+                    <td>{{ category.category_name }}</td>
+                    <td>{{ category.desc }}</td>
+                    <td>
+                        <form action="{% url 'edit_category' category.category_name %}" method="GET" style="display:inline;">
+                            <button type="submit" class="border-0 p-1 bg-transparent">
+                                <img src="{% static 'libraria/asset/edit.png' %}" alt="Edit">
+                            </button>
+                        </form>                        
+                        <form action="{% url 'delete_category' category.category_name %}" method="POST" style="display:inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="border-0 p-1 bg-transparent" onclick="return confirm('Apakah Anda yakin ingin menghapus {{ category.category_name }}?')">
+                                <img src="{% static 'libraria/asset/delete.png' %}" alt="Delete">
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-danger mt-3" id="delete-selected" onclick="return confirm('Apakah Anda yakin ingin menghapus {{ category.category_name }}?')" disabled>Delete Selected</button>
+    </form>
+</div>
+
+<script src="{% static 'libraria/js/search.js' %}" defer></script>
+<script src="{% static 'libraria/js/delete_selected.js' %}" defer></script>
+{% endblock %}

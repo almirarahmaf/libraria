@@ -1,0 +1,22 @@
+{% extends "libraria/base.html" %}
+{% load static %}
+
+{% block title %}
+Edit Category - {{ category_name }}
+{% endblock %}
+
+{% block content %}
+<link href="{% static 'libraria/css/style_catedit.css' %}" rel="stylesheet">
+
+<div class="container">
+    <h2 class="mb-3">Edit Category: {{ category_name }}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="mt-4">
+            <button type="submit" class="btn me-2">Save</button>
+            <a href="{% url 'category_list' %}" class="btn btn-danger">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

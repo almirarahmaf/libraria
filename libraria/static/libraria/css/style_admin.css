@@ -1,0 +1,91 @@
+body{
+    background-color: #FFFFF1;
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+#nav-atas{
+    background-color: #CBDCEB;
+}
+
+#logo{
+    width: 34px;
+    height: 40px;
+    margin-top: -1px;
+}
+
+#logout{
+    padding: 4px 6px 4px 6px !important;
+    background-color: transparent !important;
+    color: #133E87 !important;
+}
+
+#t-atas{
+    color: #133E87;
+}
+
+#sidebar{
+    margin-top: 70px;
+}
+
+#side{
+    background-color: #FFFFF1 !important;
+    border-color: #133E87 !important;
+    border-left: none !important;
+    min-height: 85vh;
+    position: fixed;
+    z-index: 4;
+}
+
+#ikon{
+    width: 18px;
+    height: 20px;
+}
+
+#home{
+    margin-left: px;
+}
+
+#ikon1{
+    margin-left: 4px !important;
+    margin-right: -5px !important;
+}
+
+#menu{
+    color: #608BC1;
+}
+
+.nav-link{
+    background-color: #FFFFF1 !important;
+}
+
+#isi {
+    margin-left: 280px !important;
+    padding: 10px;
+    color: #133E87 !important;
+}
+
+.nav-link.active #menu{
+    color: #133E87 !important;
+}
+
+.nav-link.active {
+    color: #133E87 !important;
+}
+
+/*Untuk layar lebih kecil*/
+@media (max-width: 991.98px) {
+    #isi {
+        margin-left: 200px;
+    }
+}
+
+/*Untuk layar sangat kecil*/
+@media (max-width: 575.98px) {
+    #isi {
+        margin-left: 70px;
+    }
+}
+
+#footer{
+    margin-top: 49vh;
+}

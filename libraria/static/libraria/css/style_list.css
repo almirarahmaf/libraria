@@ -1,0 +1,107 @@
+.table-container {
+    max-height: 400px !important;
+    overflow-y: auto !important;
+}
+
+h2.fixed {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3 !important;
+}
+
+#listinfo{
+    margin-left: -12px;
+}
+
+#search_icon{
+    height: 20px;
+    width: 18px;
+    border-radius: 6px;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+#search{
+    border: none;
+    border-radius: 6px;
+    margin-left: 8px;
+    margin-top: 2px;
+    background-color: #CBDCEB;
+}
+
+.input-group{
+    background-color: #CBDCEB;
+    border-radius: 6px;
+    margin-left: 100px;
+    padding: 5px 5px 5px 5px;
+    width: 250px;
+}
+
+input[type=text]:focus{
+    outline: none !important;
+    border: none !important;
+    background-color: #CBDCEB !important;
+    box-shadow: none !important;
+}
+
+table {
+    border-spacing: 0 8px;
+    border-collapse: separate;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #CBDCEB !important;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+table.table tbody tr td {
+    background-color: white !important;
+    padding: 8px;
+}
+
+.stars .fa-star {
+    color: #f4c150;
+}
+.stars .fa-star {
+    margin-right: 2px;
+}
+
+#add{
+    margin-left: -12px !important;
+}
+
+#add-book-btn{
+    border-color: #133E87;
+    border-width: 2px;
+    color:#133E87;
+}
+
+@media (max-width: 768px) {
+    .table-container {
+        max-width: 450px;
+    }
+
+    #search_icon{
+        margin-left: 5px;
+        height: 20px;
+        width: 18px;
+    }
+    
+    #search{
+        margin-left: 8px;
+        background-color: #CBDCEB;
+    }
+    
+    .input-group{
+        margin-left: 100px;
+        padding: 5px 5px 5px 5px;
+        width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    
+}

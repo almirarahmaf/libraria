@@ -1,0 +1,263 @@
+*{
+    font-family: 'Jeju Gothic', sans-serif;
+}
+
+body{
+    background-color: #FFFFF1;
+}
+
+/* navbar */
+.navbar-expand-sm{
+    position: fixed;
+    top: 0;
+    z-index: 1030;
+    background-color: #FFFFF1;
+    width: 100%;
+}
+
+.navbar-brand{
+    color: #133E87;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.navbar-brand:hover{
+    color: #133E87;
+}
+
+.collapse .navbar-nav .nav-item .login{
+    margin-left: 20px;
+}
+
+.collapse .navbar-nav .nav-item a{
+    color: #133E87;
+    font-size: 16px;
+}
+
+.collapse .navbar-nav .nav-item a:hover{
+    color: #608BC1;
+}
+
+.collapse .navbar-nav .btn{
+    border: 2px solid #133E87;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 40px;
+    padding: 0 10px;
+}
+
+.collapse .navbar-nav .btn a{
+    text-decoration: none;
+    color: #133E87;
+}
+
+.navbar-nav .btn:hover{
+    background-color: #608BC1;
+    border: 2px solid #608BC1;
+}
+
+.navbar-nav .btn:hover a{
+    color: #FFFFF1;
+}
+
+/* section 1 */
+.section1{
+    margin-top: 40px;
+}
+
+.section1 .col-6 h1{
+    font-size: 60px;
+    margin-left: 20px;
+    margin-top: 210px;
+}
+
+.section1 .col-6 p{
+    margin-left: 20px;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.section1 .col-6 img{
+    margin-top: 80px;
+    width: 100%;
+    height: auto;
+}
+
+.section1 .link-section2 a{
+    color: #133E87;
+    font-size: 20px;
+}
+
+.section1 .link-section2 img{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+/* section 2 */
+
+.section2{
+    text-align: center;
+    color: #133E87;
+    margin-top: 50px;
+}
+
+.section2 h1{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: 34px;
+}
+
+.section2 img{
+    width: 706px;
+    height: 504px;
+    margin-top: -10px;
+}
+
+.section2 p{
+    font-size: 24px;
+    margin-bottom: 45px;
+    margin-top: 30px;
+}
+
+.section2 .link-section3 a{
+    font-size: 20px;
+    color: #133E87;
+}
+
+.section2 .link-section3 img{
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* section 3 */
+
+.section3{
+    color: #133E87;
+    margin-top: 50px;
+}
+
+.section3 h1{
+    margin-bottom: 140px;
+    font-size: 34px;
+    text-align: center;
+}
+
+.section3 .review-card{
+    text-align: center;
+    background-color: #608BC1;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    height: 180px;
+    margin: 0 20px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.section3 .review-card p{
+    font-size: 16px;
+}
+
+.section3 .carousel-item .d-flex{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-image: none;
+}
+
+.carousel-control-prev-icon:after{
+    content: '<';
+    font-size: 30px;
+    color: #608BC1;
+}
+
+.carousel-control-next-icon:after{
+    content: '>';
+    font-size: 30px;
+    color: #608BC1;
+}
+
+#review-button{
+    color: #133E87;
+    border: 2px solid #133E87;
+    border-radius: 15px;
+    width: 180px;
+    margin-top: 110px;
+}
+
+#review-button:hover{
+    color: #FFFFF1;
+    background-color: #133E87;
+}
+
+.footer h3{
+    color: #133E87;
+    font-size: 20px;
+    margin: 80px auto 30px 50px;
+}
+
+.footer .social-media{
+    margin-right: 0;
+}
+
+.footer .fa{
+    font-size: 20px;
+    margin-top: 80px;
+    color: #133E87;
+}
+
+.footer .github{
+    margin-right: 50px;
+}
+
+
+@media (max-width: 768px){
+    .section1 .col-6 img{
+        margin-top: 200px; 
+    }
+
+    .section1 .col-6 h1{
+        margin-top: 50px;
+        font-size: 50px;
+    }
+
+    .section1 .link-section2{
+        margin-top: 30px;
+    }
+
+    .section2 img{
+        width: 506px;
+        height: 404px;
+    }
+
+    .section2 p{
+        font-size: 20px;
+    }
+
+    .section3 .review-card{
+        display: flex;
+        justify-content: space-between;
+        height: 220px;
+    }
+
+    .section3 .review-card p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px){
+    .section3 .review-card{
+        height: 320px;
+    }
+
+    .section3 .review-card p{
+        font-size: 11px;
+    }
+}

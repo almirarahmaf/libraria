@@ -1,0 +1,43 @@
+{% extends 'libraria/base_user.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}{{ query }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="{% static 'libraria/css/style_book_categories.css' %}" rel="stylesheet">
+<div class="container mt-0">
+    <h2>Search Results</h2>
+    {% if query %}
+        <p>Showing results for: <strong>{{ query }}</strong></p>
+    {% endif %}
+
+    {% if results %}
+        <div class="container">
+            <div class="row d-flex gap-5 p-3 rounded" id="book">
+                {% for listbook in results %}
+                    <div class="col-md-2 border-0 flex-row align-items-start text-center rounded bg-light" id="sec">
+                        <a href="{% url 'halamanpinjam' listbook.book_id %}"><img src="{{ listbook.cover_image.url }}" alt="{{ listbook.title }}" style="width: 100px; height: 150px;" class="pt-3"></a>
+                        <div class="justify-content-start mt-2" id="detail">
+                            <a href="{% url 'halamanpinjam' listbook.book_id %}" style="text-decoration: none; color: #133E87;"><p>{{ listbook.title }}</p></a>
+                            <p class="writer">{{ listbook.author }}</p> <!-- nanti ini diubah -->
+                            <div class="stars">
+                                {% for i in book_item.full_stars %}
+                                    <i class="fa fa-star"></i> 
+                                {% endfor %}
+                                {% for i in book_item.empty_stars %}
+                                    <i class="fa fa-star-o"></i> 
+                                {% endfor %}
+                            </div>
+                            <p class="recom">{{ listbook.price }}</p> <!-- nanti ini diubah -->
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</div>
+{% endblock %}

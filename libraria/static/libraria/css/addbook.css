@@ -1,0 +1,339 @@
+body{
+    background-color: #FFFFF1;
+    font-family: 'Jeju Gothic', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.d-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header {
+    background-color: #CBDCEB;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+}
+
+.right-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.book {
+    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+}
+
+.libraria {
+    color: #133E87;
+    font-size: 16px;
+    margin: 0;
+    margin-left: 10px; 
+}
+
+.tittle {
+    color: #133E87;
+    font-size: 22px;
+    margin: 0;
+    margin-left: 40px;
+}
+
+.photo{
+    margin: 0 auto;
+    margin-right: 10px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.menu-aside {
+    width: 180px;
+    padding: 20px 2px;
+    margin-top: 20px;
+    border-top: 2px solid #133E87;
+    border-right: 2px solid #133E87;
+    border-bottom: 2px solid #133E87;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: fixed;
+    top: 70px;
+    bottom: 10px;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #133E87;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.menu-item:hover {
+    background-color: #CBDCEB;
+}
+
+.icon{
+    width: 30px;
+    height: auto;
+}
+
+.btn-add {
+    flex: 1;
+    background: linear-gradient(to bottom, #608BC1, #133E87);
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    width: 100px;
+}
+
+.btn-add:hover{
+    background: linear-gradient(to bottom,#FFFFF1,#FFFFF1);
+    color: #133E87;
+    border: 2px solid #133E87;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.text {
+    font-size: 14px;
+    margin: 0;
+    margin-left: 10px; 
+}
+
+.text-2 {
+    font-size: 14px;
+    color: #608BC1;
+    margin: 0;
+    margin-left: 10px; 
+}
+
+.content {
+    margin-left: 190px;
+    padding: 10px;
+    margin-top: 70px;
+}
+
+.book-info{
+    text-align: center;
+    background-color: #CBDCEB;
+    color: #133E87;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    margin-right: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.book-container{
+    background-color: #CBDCEB;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.detail{
+    font-size: 15px;
+    color: #133E87;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.input-detail{
+    display: block; 
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    padding-left: 10px; 
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.input-detail::placeholder {
+    color: #608BC1;
+    font-size: 14px;
+}
+
+.input-detail:focus {
+    color: #133E87; 
+    font-size: 14px;
+    outline: none;
+}
+
+.synopsis{
+    display: block; 
+    width: calc(100% - 80px);
+    margin: 0 10px;
+    padding-left: 10px; 
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.synopsis::placeholder{
+    color: #608BC1;
+    font-size: 14px;
+}
+
+.synopsis:focus {
+    color: #133E87; 
+    font-size: 14px;
+    outline: none;
+}
+
+.form-select{
+    display: block; 
+    font-size: 14px;
+    width: calc(100% - 20px);
+    margin: 0 10px; 
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    color: #608BC1;
+}
+
+.form-control{
+    display: block; 
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    padding-left: 10px; 
+    color: #133E87; 
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.button-group{
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.btn-save {
+    flex: 1;
+    background: linear-gradient(to bottom, #608BC1, #133E87);
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    width: 90px;
+    margin-left: 10px;
+}
+
+.btn-save:hover{
+    background: linear-gradient(to bottom,#FFFFF1,#FFFFF1);
+    color: #133E87;
+    border: 2px solid #133E87;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.btn-back {
+    flex: 1;
+    background: linear-gradient(to bottom, #608BC1, #133E87);
+    color: white;
+    text-align: center;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+    width: 90px;
+}
+
+.btn-back:hover{
+    background: linear-gradient(to bottom,#FFFFF1,#FFFFF1);
+    color: #133E87;
+    border: 2px solid #133E87;
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+.form-control {
+    display: block;
+    width: 98%;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid #CBDCEB;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #133E87;
+}
+
+.form-control::placeholder {
+    color: #608BC1;
+    font-size: 14px;
+}
+
+.form-control:focus {
+    border-color: #133E87;
+    box-shadow: 0 0 5px rgba(19, 62, 135, 0.5);
+    outline: none;
+}
+
+.synopsis {
+    resize: none;
+    display: block;
+    width: 98%;
+    padding: 5px;
+    border: 1px solid #CBDCEB;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #133E87;
+}

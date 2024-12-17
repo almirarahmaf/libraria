@@ -1,0 +1,23 @@
+.form-control{
+    background-color: #CBDCEB;
+    opacity: 50%;
+    box-shadow: 2px 2px 5px black;
+    color: #133E87;
+    width: 50%;
+    margin-top: 8px;
+}
+
+button{
+    background-image: linear-gradient(#608BC1, #133E87);
+    color: #F3F3E0 !important;
+    box-shadow: 3px 3px 7px black;
+    padding: 5px 15px 5px 15px !important;
+    border: none;
+}
+
+.btn-danger{
+    color: #F3F3E0 !important;
+    box-shadow: 3px 3px 7px black;
+    padding: 5px 15px 5px 15px !important;
+    border: none;
+}
